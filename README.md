@@ -5,4 +5,9 @@ Particles are initially in a circular orbit with zero inclination and eccentrici
 
 Velocity of the particles was found using the formula for centrifugal force.
 
+NOTE: Use the new version of AMUSE instead of the binary release.
+Usage with MPICH2: 
+
+mpiexec.hydra -n <number of processes> amuse.sh <name of file>
+
 

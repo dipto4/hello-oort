@@ -1,0 +1,15 @@
+NOTES:
+1. Shunned kepler as a whole. Used Vis-viva equation to figure out the semi-major
+axis. Used semi-major axis to obtain eccentricity. Found inclination using maxwell's code.
+2. Plotting inc vs. semi-major axis.
+
+TODO:
+1. Go over to SiMon repo and see what it's about.
+2. Use 'nohup' command for ssh simulations.
+3. Save data to hdf5 file instead of plotting it everytime. Make code modular and 
+create another python script to plot data from said file. Improves performance.
+4. Use Mercury() instead of MercuryInterface() or MercuryWayWard() as they are
+legacy codes. 
+5. USE UNITS!!!
+6. new_solar_system() will take care of solar system and make code more concise.
+

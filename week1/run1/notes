@@ -9,9 +9,9 @@ NOTES:
 sun.
 
 TODO list: 
-1. Find way to calculate semimajor axis without using Kepler. 
-2. Make a table of how many particles are within a specified limit (like 100 AU, 1000 AU etc.)
-3. Find eccentricity without using Kepler.
+1. Find way to calculate semimajor axis without using Kepler. -- DONE (Vis-viva eqn) 
+2. Make a table of how many particles are within a specified limit (like 100 AU, 1000 AU etc.) -- doing it in version 3 or 4
+3. Find eccentricity without using Kepler. -- DONE 
 
 Code used:
 testSolarSystem.py

@@ -1,0 +1,18 @@
+NOTES:
+
+1. Run failed after 608 iterations as ssh pipeline broke.
+2. Contains snapshots of test particles at the initial stage, intermediate stage
+(0.51 Myr to 0.59 Myr).
+3. Only plots the positions of the particles in the cartesian plane.
+4. Does not plot inclination or semimajor axis as I could not run Kepler. 
+5. Initial observations : A lot of particles seem to be at a higher distance from the 
+sun.
+
+TODO list: 
+1. Find way to calculate semimajor axis without using Kepler. 
+2. Make a table of how many particles are within a specified limit (like 100 AU, 1000 AU etc.)
+3. Find eccentricity without using Kepler.
+
+Code used:
+testSolarSystem.py
+

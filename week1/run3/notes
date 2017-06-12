@@ -1,0 +1,16 @@
+NOTES
+
+1. Original NMAX for mercury is 2000. Caused a lot of headache as to why code was not 
+running. 
+2. NMAX can be changed by going into mercury.inc
+3. 10,000 particle simulation ongoing.
+4. High inclination,semi major axis can be a result of gravitational slingshot by sun, planets.
+5. Mercury does remove particles after a certain threshold.
+6. Mercury does not remove particles after collision.
+7. All orbiters now in prograde orbit.
+8. Fixed issue with initial centripetal velocity. Turns out that the problem was 
+in the direction of vx. A simple negative sign fixed the issue.
+
+TODO: 
+1. Write script to calculate inclination, eccentricity, semi-major axis from hdf5 data.
+Plot the data.

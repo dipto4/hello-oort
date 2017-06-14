@@ -1,0 +1,36 @@
+wrapped<wrapped<wrapped<function: int get_position(int id)
+output: double x, double y, double z, int __result>>>
+Traceback (most recent call last):
+  File "simulationOneW2.py", line 97, in <module>
+    planetplot()
+  File "simulationOneW2.py", line 77, in planetplot
+    err=mer.evolve_model(time)
+  File "/home/dmukherjee/amuse/src/amuse/community/mercury/interface.py", line 1394, in evolve_model
+    channel.copy_attributes(["x","y","z","vx","vy","vz","mass"])
+  File "/home/dmukherjee/amuse/src/amuse/datamodel/particles.py", line 3122, in copy_attributes
+    values = self.from_particles.get_values_in_store(self.from_indices, attributes)
+  File "/home/dmukherjee/amuse/src/amuse/datamodel/particles.py", line 1338, in get_values_in_store
+    return self._private.attribute_storage.get_values_in_store(indices, attributes)
+  File "/home/dmukherjee/amuse/src/amuse/datamodel/incode_storage.py", line 909, in get_values_in_store
+    result = getter.get_attribute_values(self, attributes, indices_in_the_code)
+  File "/home/dmukherjee/amuse/src/amuse/datamodel/incode_storage.py", line 204, in get_attribute_values
+    return_value = self.method(*indices, **storage.extra_keyword_arguments_for_getters_and_setters)
+  File "/home/dmukherjee/amuse/src/amuse/support/methods.py", line 107, in __call__
+    result = self.method(*list_arguments, **keyword_arguments)
+  File "/home/dmukherjee/amuse/src/amuse/support/methods.py", line 109, in __call__
+    result = self.convert_result(result)
+  File "/home/dmukherjee/amuse/src/amuse/support/methods.py", line 145, in convert_result
+    return self.definition.convert_result(self, result)
+  File "/home/dmukherjee/amuse/src/amuse/support/interface.py", line 628, in convert_result
+    return self.handle_return_value(method, result)
+  File "/home/dmukherjee/amuse/src/amuse/support/interface.py", line 571, in handle_as_unit
+    unit.append_result_value(method, self, value, result)
+  File "/home/dmukherjee/amuse/src/amuse/support/interface.py", line 60, in append_result_value
+    self.convert_result_value(method, definition, value)
+  File "/home/dmukherjee/amuse/src/amuse/support/interface.py", line 68, in convert_result_value
+    definition.handle_errorcode(x)
+  File "/home/dmukherjee/amuse/src/amuse/support/interface.py", line 548, in handle_errorcode
+    raise exceptions.AmuseException("Error when calling '{0}' of a '{1}', errorcode is {2}".format(self.name, type(self.wrapped_object).__name__, errorcode), errorcode)
+amuse.support.exceptions.AmuseException: Error when calling 'get_position' of a 'Mercury', errorcode is -1
+Elapsed:44:28.26,User=2849.358,System=66.291,CPU=109.2%.
+

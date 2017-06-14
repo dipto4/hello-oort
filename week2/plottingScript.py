@@ -5,7 +5,11 @@ import numpy
 import sys
 
 mu = constants.G.value_in((units.km)**3 /(units.MSun * units.s **2))
-file_name = " "
+
+
+
+
+
 def orbital_elements_test_particles(xx,yy,zz,vxx,vyy,vzz):
     #Using vis-viva equation
     m = 1 

@@ -1,0 +1,19 @@
+Error stems from the fact that mercury removes a partice due to collision or large distance. The ID of that particle is still preserved 
+by AMUSE and not removed. So when AMUSE tries to get the properties of a particle that was removed by mercury, it does not find the particle
+in the mercury database, which throws off an error.
+
+
+SOLUTION:
+Not much of a bug fix, more of a hack.
+The error code is -1. So when the particular function hits that error code, we change the value of the error code to 0. So the particle still gets written to the 
+data file, but with xpos,ypos,zpos = 0 and vx,vy,vz = 0. 
+
+OTHER (possible) BUGS:
+
+1. https://arxiv.org/pdf/0808.0483.pdf mentions how the STAT array which takes care of the particle statuses in mercury6_2.for is not initialzied to zero.
+This can present certain problems which starting new code if the code is compiled with gfortran or f77. Error is not present if we are using
+other compilers like ifort. In other words, error is compiler dependent and should be fixed. Error was fixed by adding 3 lines of code
+that initialized the particles. Bug has been known to remove particle in non-phyiscal ways.
+
+
+

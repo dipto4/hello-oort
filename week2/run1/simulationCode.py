@@ -74,12 +74,14 @@ def planetplot():
     while time<t_end:
         time=time+ (1000 | units.yr)
         err=mer.evolve_model(time)
-
+        for particle in mer.particles:
+            if (particle.x == 0 and particle.y == 0 and particle.z == 0 and particle.vx == 0 and particle.vy == 0 and particle.vz == 0):
+                mer.particle.remove_particle(particle)
         channel.copy()
         channel_to_test_particles.copy()
 
-        write_set_to_file(solar_system,'evolutionSolarSystem_w2r2_0.hdf5','hdf5')
-        write_set_to_file(test_particles,'evolutionParticles_w2r2_0.hdf5','hdf5')
+        write_set_to_file(solar_system,'evolutionSolarSystem_w2r3_0.hdf5','hdf5')
+        write_set_to_file(test_particles,'evolutionParticles_w2r3_0.hdf5','hdf5')
 
         print(str(count))
         count = count + 1

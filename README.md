@@ -4,7 +4,9 @@ Week 1 : Putting a collection of test particles at random locations between 4 AU
 Particles are initially in a circular orbit with zero inclination and eccentricity.Velocity of the particles was found using the formula for centrifugal force.
 
 Week 2 : Running code with Mercury() instead of MercuryInterface() posed a problem which has been taken care of. Code has been made 
-more concise and modular. Data is being stored in hdf5 files instead of plotting them directly. Please see week folder for more details.
+more concise and modular. Data is being stored in hdf5 files instead of plotting them directly. Please see week folder for more details. Different initial conditions based on the nice model have been followed.
+
+Week 3: Running nice model simulations upto 10 Myr. 
 
 
 NOTE: Use the new version of AMUSE instead of the binary release.

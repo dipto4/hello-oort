@@ -6,10 +6,9 @@ import numba
 import sys
 from matplotlib import pyplot
 mu = constants.G.value_in((units.km)**3 /(units.s **2 * units.MSun))
-#fileName = sys.argv[1]
-fileName = 'evolutionParticles_w2r1_nice_0.hdf5'
+fileName = 'evolutionParticles_w3r1_nice_0.hdf5'
 f = h5py.File(fileName,'r')
-fS = h5py.File('evolutionSolarSystem_w2r1_nice_0.hdf5')
+fS = h5py.File('evolutionSolarSystem_w3r1_nice_0.hdf5')
 
 @numba.jit
 def orbital_elements_test_particles(x,y,z,vx,vy,vz,mm,xSun,ySun,zSun,vxSun,vySun,vzSun):
@@ -59,20 +58,20 @@ def orbital_elements_test_particles(x,y,z,vx,vy,vz,mm,xSun,ySun,zSun,vxSun,vySun
 
 def plot():
 
-    j = 1001
-    while j < 1002:
-        pyplot.xlim(40)
+    j = 1
+    while j < 20002:
+        pyplot.xlim(100000)
 
-        #pyplot.xscale('log')
-        pyplot.ylim(0,0.4)
-        pyplot.ylabel('eccentricity')
-        #pyplot.xticks([10 ** i for i in range(0,3)])
+        pyplot.xscale('log')
+        pyplot.ylim(0,1000)
+        pyplot.ylabel('perihelion (AU)')
+        pyplot.xticks([10 ** i for i in range(0,7)])
         pyplot.gca().invert_xaxis()
-
         pyplot.xlabel('a (AU)')
 
         currentTime = str(j).zfill(10)
         attributes = f['particles'][currentTime]['attributes']
+       
         attributesSun = fS['particles'][currentTime]['attributes']
         vx = attributes['vx']
         vy = attributes['vy']
@@ -91,29 +90,14 @@ def plot():
         ySun = attributesSun['y'][0]
         zSun = attributesSun['z'][0]
 
-        px = attributesSun['x'][1:]
-        py = attributesSun['y'][1:]
-        pz = attributesSun['z'][1:]
-        pvx = attributesSun['vx'][1:]
-        pvy = attributesSun['vy'][1:]
-        pvz = attributesSun['vz'][1:]
-        pm = attributesSun['mass'][1:]
-
-        for i in range(0,4):
-            semi_major , ecc , inc , q = orbital_elements_test_particles(px[i],py[i],pz[i],pvx[i],pvy[i],pvz[i],pm[i],xSun,ySun,zSun,vxSun,vySun,vzSun)
-            pyplot.plot(semi_major,ecc,'b^',markersize=12)
-            print semi_major
-
-
         semi_major , ecc , inc,q = orbital_elements_test_particles(x,y,z,vx,vy,vz,0,xSun,ySun,zSun,vxSun,vySun,vzSun)
 
-
-        pyplot.plot(semi_major,ecc,'r.',alpha=0.5)
-
+        pyplot.plot(semi_major,q,'r.',alpha=0.5,markersize=5)
 
 
-        pyplot.savefig('ecc_nice_1_new_'+str(j).zfill(4)+'.png')
-        j+=100
+        pyplot.savefig('perhihelion_w3r1_nice_'+str(j).zfill(4)+'.png')
+        j+=1000
+        print j
         pyplot.clf()
     f.close()
     fS.close()

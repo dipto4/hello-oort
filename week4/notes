@@ -1,0 +1,26 @@
+This simulation consists of particles with mass. The mass of the disk is taken to be
+0.1*M_Jupiter. Since mass of Jupiter is about 300 times the mass of earth, this implies that
+the mass of the disk is around 30 times the mass of the earth with is consistent with
+other simulations.
+
+Both configurations will be used to perform this simulation.
+
+CONFIGURATION 1 
+
+Jupiter : 5 AU
+Saturn : 7.5 AU
+Neptune : 12.5 AU
+Uranus : 15 AU
+Disk : 16-40 AU
+
+CONFIGURATION 2
+
+Jupiter : 5.5AU
+Saturn : 8 AU
+Neptune : 11 AU
+Uranus : 14 AU
+Disk : 16-35 AU
+
+Simulations will be performed for a period of 10 Myr or more.
+
+Newer plotting scripts will be added later.

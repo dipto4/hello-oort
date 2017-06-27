@@ -6,7 +6,10 @@ Particles are initially in a circular orbit with zero inclination and eccentrici
 Week 2 : Running code with Mercury() instead of MercuryInterface() posed a problem which has been taken care of. Code has been made 
 more concise and modular. Data is being stored in hdf5 files instead of plotting them directly. Please see week folder for more details. Different initial conditions based on the nice model have been followed.
 
-Week 3: Running nice model simulations upto 10 Myr. 
+Week 3: Running nice model simulations upto 10 Myr. Improved plotting scripts. Using colorbars.
+
+Week 4: Simulations with particles with mass instead of test particles. Configuration similar to Nice model configurations. Mass of disk = 0.1 M_Jupiter.
+Radius of particles ~ radius of pluto. Number of particles = 2000
 
 
 NOTE: Use the new version of AMUSE instead of the binary release.
